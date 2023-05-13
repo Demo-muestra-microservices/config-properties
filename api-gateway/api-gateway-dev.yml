@@ -10,4 +10,4 @@ spring:
           predicates:
             - Path=/api/v1/cursos/**
           filters:
-            - StripPRefix=3
+            - StripPrefix=3
