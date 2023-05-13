@@ -1,2 +1,13 @@
 api-gateway:
   property: Api-gateway profile dev
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb:://user-service
+          predicates:
+            - Path=/api/v1/cursos/**
+          filters:
+            - StripPRefix=3
