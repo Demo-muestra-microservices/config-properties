@@ -5,8 +5,7 @@ spring:
   datasource:
     username: carlos
     password: admin
-    url: jpa:mysql://localhost:3306/user-service?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-
+    url: jdbc:mysql://localhost:3306/user-service?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
   jpa:
     hibernate:
       ddl-auto: update
