@@ -9,3 +9,5 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/users/**
+            - Path=/api/v1/shopping/**
+            - Path=/api/v1/products/**

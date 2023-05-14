@@ -1,0 +1,11 @@
+user-service:
+  property: Shopping-service profile dev
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shopping-service
+    username: carlos
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update

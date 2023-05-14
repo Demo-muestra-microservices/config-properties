@@ -1,0 +1,11 @@
+user-service:
+  property: Product-service profile dev
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 2707
+      database: user-service
+      username:
+      password:
