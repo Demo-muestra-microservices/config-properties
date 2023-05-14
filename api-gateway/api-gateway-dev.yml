@@ -9,5 +9,11 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/users/**
-            - Path=/api/v1/shopping/**
+        - id: product-service
+          uri: lb://product-service
+          predicates:
             - Path=/api/v1/products/**
+        - id: shopping-service
+          uri: lb://shopping-service
+          predicates:
+            - Path=/api/v1/shopping/**
