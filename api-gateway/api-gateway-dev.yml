@@ -2,20 +2,6 @@ api-gateway:
   property: Api-gateway profile dev
 
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          gateway:
-            provider: my-provider
-            client-id: my_client
-            client-srcret: 8Ggedaz6NkRj0JpPnQDsghRmzKdaAesN
-            authorization-grant-type: authorization_code
-            scope: openid, product.read
-        provider:
-          my-provider:
-            issuer-uri: http://localhost:8080/auth/realms/my_realm
-  
   cloud:
     gateway:
       routes:
