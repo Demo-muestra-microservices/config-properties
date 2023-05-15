@@ -2,11 +2,6 @@ user-service:
   property: User-service profile dev
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/microservices-realm
   datasource:
     username: carlos
     password: admin
