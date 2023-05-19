@@ -1,0 +1,2 @@
+user-service:
+  property: Oauth2-service profile prod
