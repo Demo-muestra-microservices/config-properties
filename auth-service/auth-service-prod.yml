@@ -1,0 +1,2 @@
+user-service:
+  property: Auth-service profile prod

@@ -1,5 +1,5 @@
 user-service:
-  property: Oauth2-service profile dev
+  property: Auth-service profile dev
 
 spring:
   datasource:

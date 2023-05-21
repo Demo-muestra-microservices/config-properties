@@ -5,10 +5,10 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - TokenRelay
+
       routes:
         - id: oauth2-service
-          uri: lb://oauth2-service
+          uri: lb://auth-service
           predicates:
             - Path=/api/v1/oauth2/**
         - id: user-service
