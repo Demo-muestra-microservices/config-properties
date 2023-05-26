@@ -7,10 +7,6 @@ spring:
       default-filters:
 
       routes:
-        - id: oauth2-service
-          uri: lb://auth-service
-          predicates:
-            - Path=/api/v1/oauth2/**
         - id: user-service
           uri: lb://user-service
           predicates:
