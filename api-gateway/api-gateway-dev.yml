@@ -22,7 +22,7 @@ spring:
           predicates:
             - Path=/
           filters:
-            - RedirectTo=301,${gateway-uri}/home/
+            - RedirectTo=301,${gateway-uri}/ui/
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -41,7 +41,7 @@ spring:
             - Path=/api/v1/shopping/**
           filters:
             - TokenRelay=
-        - id: home
+        - id: ui
           uri: ${react-uri}
           predicates:
-            - Path=/home/**
+            - Path=/ui/**
