@@ -39,3 +39,5 @@ spring:
           uri: ${react-uri}
           predicates:
             - Path=/**
+          filters:
+            - RewritePath=/(?<segment>.*), /$\{segment}
