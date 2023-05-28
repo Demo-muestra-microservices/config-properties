@@ -9,7 +9,7 @@ spring:
         - SaveSession
       routes:
         - id: home
-          uri: api-gateway
+          uri: http://localhost:8080/
           predicates:
             - Path=/
           filters:
