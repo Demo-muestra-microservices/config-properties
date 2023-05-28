@@ -44,4 +44,4 @@ spring:
         - id: ui
           uri: ${react-uri}
           predicates:
-            - Path=/ui/**
+            - Path=/
