@@ -13,7 +13,7 @@ spring:
           predicates:
             - Path=/
           filters:
-            - RedirectTo=301,api-gateway/ui/
+            - RedirectTo=301,http://localhost/ui/
         - id: user-service
           uri: lb://user-service
           predicates:
