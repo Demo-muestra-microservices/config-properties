@@ -5,17 +5,34 @@ spring:
   cloud:
     gateway:
       default-filters:
-
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - SaveSession
       routes:
+        - id: home
+          uri: api-gateway
+          predicates:
+            - Path=/
+          filters:
+            - RedirectTo=301,api-gateway/ui/
         - id: user-service
           uri: lb://user-service
           predicates:
             - Path=/api/v1/users/**
+          filters:
+            - TokenRelay=
         - id: product-service
           uri: lb://product-service
           predicates:
             - Path=/api/v1/products/**
+          filters:
+            - TokenRelay=
         - id: shopping-service
           uri: lb://shopping-service
           predicates:
             - Path=/api/v1/shopping/**
+          filters:
+            - TokenRelay=
+        - id: ui
+          uri: http://localhost:5173/
+          predicates:
+            - Path=/ui/**
