@@ -8,7 +8,7 @@ auth0-client-id: eOSlbhL4uQhWIia3I6yXNqGhbxv7iehq
 auth0-secret: gyhuo0QyAHwDe6VeVa6bAabSDwoqBKknf7VU0kf91a-GGHfQKvg9LsbQO516_0LU
 
 gateway-uri: ${scheme}://localhost:${server.port}
-react-uri: ${scheme}://localhost
+react-uri: ${scheme}://5173
 
 spring:
   cloud:
