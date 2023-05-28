@@ -41,7 +41,7 @@ spring:
             - Path=/api/v1/shopping/**
           filters:
             - TokenRelay=
-        - id: ui
+        - id: home
           uri: ${react-uri}
           predicates:
             - Path=/home/**
