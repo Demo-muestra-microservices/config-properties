@@ -22,7 +22,7 @@ spring:
           predicates:
             - Path=/
           filters:
-            - RedirectTo=301,${gateway-uri}
+            - RedirectTo=301,${react-uri}
         - id: user-service
           uri: lb://user-service
           predicates:
