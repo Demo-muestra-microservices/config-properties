@@ -1,6 +1,15 @@
 api-gateway:
   property: Api-gateway profile dev
 
+scheme: http
+
+auth0-issuer: https://dev-4nl5k5ui2y3z081n.us.auth0.com/
+auth0-client-id: eOSlbhL4uQhWIia3I6yXNqGhbxv7iehq
+auth0-secret: gyhuo0QyAHwDe6VeVa6bAabSDwoqBKknf7VU0kf91a-GGHfQKvg9LsbQO516_0LU
+
+gateway-uri: ${scheme}://localhost:${server.port}
+react-uri: ${scheme}://localhost:5173
+
 spring:
   cloud:
     gateway:
@@ -9,11 +18,11 @@ spring:
         - SaveSession
       routes:
         - id: home
-          uri: http://localhost:8080/
+          uri: ${gateway-uri}
           predicates:
             - Path=/
           filters:
-            - RedirectTo=301,http://localhost:8080/ui/
+            - RedirectTo=301,${gateway-uri}/ui/
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -33,6 +42,6 @@ spring:
           filters:
             - TokenRelay=
         - id: ui
-          uri: http://localhost:5173/
+          uri: ${react-uri}
           predicates:
             - Path=/ui/**
