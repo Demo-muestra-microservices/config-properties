@@ -35,9 +35,3 @@ spring:
             - Path=/api/v1/shopping/**
           filters:
             - TokenRelay=
-        - id: reactApp
-          uri: ${react-uri}
-          predicates:
-            - Path=/**
-          filters:
-            - RewritePath=/(?<segment>.*), /$\{segment}
