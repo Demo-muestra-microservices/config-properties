@@ -17,6 +17,12 @@ spring:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
         - SaveSession
       routes:
+        - id: home
+          uri: ${gateway-uri}
+          predicates:
+            - Path=/
+          filters:
+            - RedirectTo=301,${gateway-uri}/ui/
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -38,4 +44,4 @@ spring:
         - id: ui
           uri: ${react-uri}
           predicates:
-            - Path=/
+            - Path=/ui/**
